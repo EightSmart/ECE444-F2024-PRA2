@@ -11,6 +11,6 @@ COPY . .
 ENV FLASK_APP="example4/app.py"
 ENV FLASK_DEBUG=1
 
-EXPOSE 5000
+EXPOSE 3500
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "-p", "3500"]
