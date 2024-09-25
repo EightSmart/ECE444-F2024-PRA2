@@ -38,6 +38,11 @@ def index():
         session['name'] = form.name.data
 
         email = form.email.data
+        old_email = session.get('email')
+        if old_email is not None and old_name != email:
+            flash('Looks like you have changed your email!')
+        
+        session['name'] = form.name.data
         if "@mail.utoronto.ca" not in email:
             session['email'] = None
         else:
